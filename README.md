@@ -1,6 +1,6 @@
 # Trivia-Game
-A space themed word guessing game that i made!
-You can play it here -->
+A short Trivia that i made!
+You can play it here --> https://lijaack.github.io/Trivia-Game/
 
 
 ## Built With
