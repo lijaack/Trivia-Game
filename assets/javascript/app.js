@@ -32,7 +32,7 @@ $( document ).ready(function(){
             answers:["the right answer","the wrong answer","the wrong answer","the wrong answer"],
             answer:"the right answer"} ,
 
-            {question:"who is sponge bob's best friend?",
+            {question:"who is sponge bobs best friend?",
             answers:["squidward","patrick","plankton","mr.krab"],
             answer:"patrick"},
 
@@ -59,12 +59,12 @@ $( document ).ready(function(){
 
             nextTrivia.append(question);
 
-            var answer1 = $("<label class='buttonSpace'><input name='"+ trivia[i].question + "' type='radio' option='"+ trivia[i].answers[0]+ "'>" + trivia[i].answers[0] + "</label>")
-            var answer2 = $("<label class='buttonSpace'><input name='"+ trivia[i].question + "' type='radio' option='"+ trivia[i].answers[1]+ "'>" + trivia[i].answers[1] + "</label>")
-            var answer3 = $("<label class='buttonSpace'><input name='"+ trivia[i].question + "' type='radio' option='"+ trivia[i].answers[2]+ "'>" + trivia[i].answers[2] + "</label>")
-            var answer4 = $("<label class='buttonSpace'><input name='"+ trivia[i].question + "' type='radio' option='"+ trivia[i].answers[3]+ "'>" + trivia[i].answers[3] + "</label>")
+            var answer1 = $("<label class='buttonSpace'><input name='"+ trivia[i].question + "' type='radio' value='"+ trivia[i].answers[0]+ "'>" + trivia[i].answers[0] + "</label>")
+            var answer2 = $("<label class='buttonSpace'><input name='"+ trivia[i].question + "' type='radio' value='"+ trivia[i].answers[1]+ "'>" + trivia[i].answers[1] + "</label>")
+            var answer3 = $("<label class='buttonSpace'><input name='"+ trivia[i].question + "' type='radio' value='"+ trivia[i].answers[2]+ "'>" + trivia[i].answers[2] + "</label>")
+            var answer4 = $("<label class='buttonSpace'><input name='"+ trivia[i].question + "' type='radio' value='"+ trivia[i].answers[3]+ "'>" + trivia[i].answers[3] + "</label>")
 
-            var options = $("<div class='row justify-content-center'>")
+            var options = $("<div class='row justify-content-center'>");
             options.append(answer1, answer2, answer3, answer4);
             nextTrivia.append(options);
 
@@ -74,20 +74,30 @@ $( document ).ready(function(){
 
         }
 
-    
+        
 
         var finishButton = $("<div class='row justify-content-center'><button class='btn-end' id='end'> finish </button></div>");
 
         $(".divYellow").append (finishButton);
 
+        $("input").click(function(){
+    
+
+        })
+
         $("#end").click(function(){
             checkAnswers();
         });
                 
-       
+        
 
         function checkAnswers(){
             //grab input values and compare with correct answers 
+            for (i=0; i<trivia.length; i++){
+                var checkHere=trivia[i].question;
+                console.log($("input[name='"+checkHere+"']").find("input:checked").attr("value"))
+                // var answer = $(this).find("input:checked")
+            }
             //empty page
             $(".divYellow").empty();
             $(".divyellow").append("<h2>Correct answers: " + correct + "!</h2><br>");
