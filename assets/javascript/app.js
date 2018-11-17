@@ -19,7 +19,44 @@ $( document ).ready(function(){
         }
         $("#info").append("<h2>Time Remaining: " + time + " seconds!</h2>")
 
-        const trivia=[
+        
+
+            
+        var randomQuestionSet = 
+        [[
+            {question:"what is 7+7?",
+            answers:[13,11,6,14],
+            answer:"14"},
+
+            {question:"The adult human skeleton is made of up how many bones?",
+            answers:[200,183,286,206],
+            answer:"206"} ,
+
+            {question:"select the right answer!",
+            answers:["the right answer","the wrong answer","the wrong answer","the wrong answer"],
+            answer:"the right answer"} ,
+
+            {question:"who is sponge bobs best friend?",
+            answers:["squidward","patrick","plankton","mr.krab"],
+            answer:"patrick"},
+
+            {question:"Who is the fastest hero?",
+            answers:["iron man","bat man","the flash", "captain america"],
+            answer:"the flash"},
+
+            {question:"what is 5+5?",
+            answers:[10,4,6,2],
+            answer:"10"} ,
+
+            {question:"what color is spongebob?",
+            answers:["black","blue","yellow","green"],
+            answer:"yellow"} ,
+
+            {question:"what color is patrick?",
+            answers:["white","orange","blue","pink"],
+            answer:"pink"} 
+        ],   
+        [
             {question:"what is 1+1?",
             answers:[1,2,3,4],
             answer:"2"},
@@ -51,7 +88,112 @@ $( document ).ready(function(){
             {question:"what color is patrick?",
             answers:["white","orange","blue","pink"],
             answer:"pink"} 
-        ]      
+        ],   
+        
+        [
+            {question:"what is 1+1?",
+            answers:[1,2,3,4],
+            answer:"2"},
+
+            {question:"what color is an orange?",
+            answers:["yellow","green","orange","black"],
+            answer:"orange"} ,
+
+            {question:"select the right answer!",
+            answers:["the right answer","the wrong answer","the wrong answer","the wrong answer"],
+            answer:"the right answer"} ,
+
+            {question:"who is sponge bobs best friend?",
+            answers:["squidward","patrick","plankton","mr.krab"],
+            answer:"patrick"},
+
+            {question:"Who is the fastest hero?",
+            answers:["iron man","bat man","the flash", "captain america"],
+            answer:"the flash"},
+
+            {question:"what is 5+5?",
+            answers:[10,4,6,2],
+            answer:"10"} ,
+
+            {question:"what color is spongebob?",
+            answers:["black","blue","yellow","green"],
+            answer:"yellow"} ,
+
+            {question:"what color is patrick?",
+            answers:["white","orange","blue","pink"],
+            answer:"pink"} 
+        ],   
+        
+        [
+            {question:"what is 1+1?",
+            answers:[1,2,3,4],
+            answer:"2"},
+
+            {question:"what color is an orange?",
+            answers:["yellow","green","orange","black"],
+            answer:"orange"} ,
+
+            {question:"select the right answer!",
+            answers:["the right answer","the wrong answer","the wrong answer","the wrong answer"],
+            answer:"the right answer"} ,
+
+            {question:"who is sponge bobs best friend?",
+            answers:["squidward","patrick","plankton","mr.krab"],
+            answer:"patrick"},
+
+            {question:"Who is the fastest hero?",
+            answers:["iron man","bat man","the flash", "captain america"],
+            answer:"the flash"},
+
+            {question:"what is 5+5?",
+            answers:[10,4,6,2],
+            answer:"10"} ,
+
+            {question:"what color is spongebob?",
+            answers:["black","blue","yellow","green"],
+            answer:"yellow"} ,
+
+            {question:"what color is patrick?",
+            answers:["white","orange","blue","pink"],
+            answer:"pink"} 
+        ],   
+        
+        [
+            {question:"what is 2+2?",
+            answers:[6,7,9,4],
+            answer:"4"},
+
+            {question:"what color is an apple?",
+            answers:["yellow","red","orange","black"],
+            answer:"red"} ,
+
+            {question:"select the wrong answer!",
+            answers:["the right answer","the right answer","the wrong answer","the right answer"],
+            answer:"the wrong answer"} ,
+
+            {question:"who is sponge bobs best friend?",
+            answers:["squidward","patrick","plankton","mr.krab"],
+            answer:"patrick"},
+
+            {question:"Who is the fastest hero?",
+            answers:["iron man","bat man","the flash", "captain america"],
+            answer:"the flash"},
+
+            {question:"what is 5+5?",
+            answers:[10,4,6,2],
+            answer:"10"} ,
+
+            {question:"what color is spongebob?",
+            answers:["black","blue","yellow","green"],
+            answer:"yellow"} ,
+
+            {question:"what color is patrick?",
+            answers:["white","orange","blue","pink"],
+            answer:"pink"} 
+        ]];
+
+        var trivia = randomQuestionSet[Math.floor(Math.random()*5)]
+        
         for (i=0; i<trivia.length;i++){
             var nextTrivia = $("<div class='container justify-content-center'>");
 
@@ -130,7 +272,7 @@ $( document ).ready(function(){
                 location.reload();
             });
 
-            //return results
+        
         
         }
 
