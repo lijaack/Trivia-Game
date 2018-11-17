@@ -10,10 +10,12 @@ $( document ).ready(function(){
         
         function timer(){
             if (time===0){
-                clearInterval(setIntervalID)
-            }
+                clearInterval(setIntervalID);
+                checkAnswers();
+            } 
             $("#info").html("<h2>Time Remaining: " + time + " seconds!</h2>")
             time--
+        
         }
         $("#info").append("<h2>Time Remaining: " + time + " seconds!</h2>")
 
@@ -66,7 +68,7 @@ $( document ).ready(function(){
             options.append(answer1, answer2, answer3, answer4);
             nextTrivia.append(options);
 
-            var correct = trivia[i].answer;
+            var rightAnswer = trivia[i].answer;
             
             $(".divYellow").append(nextTrivia);
 
@@ -78,33 +80,30 @@ $( document ).ready(function(){
 
         $(".divYellow").append (finishButton);
 
-        $("#end").click(checkAnswers());
-                
-        if (time===0){
+        $("#end").click(function(){
             checkAnswers();
-        }    
+        });
+                
        
 
         function checkAnswers(){
             //grab input values and compare with correct answers 
             //empty page
+            $(".divYellow").empty();
+            $(".divyellow").append("<h2>Correct answers: " + correct + "!</h2><br>");
+            $(".divyellow").append("<h2>Wrong answers: " + incorrect + "!</h2><br>");
+            $(".divyellow").append("<h2>Unanswered: " + unanswered + "!</h2><br>");
+            $(".divyellow").append($("<button class='btn-size' id='playAgain'> Try Again </button>"));
+            $("#playAgain").click(function(){
+                location.reload();
+            });
+
             //return results
+        
 
 
+        };
 
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 })
