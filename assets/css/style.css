@@ -29,3 +29,20 @@
     color:white;
 
 }
+
+.btn-end{
+    height:50px;
+    width:100px;
+    font-size:20px;
+    background-color:#17a2b8;
+    border-color:#17a2b8;
+    color:white;
+}
+
+.buttonSpace{
+    margin-right: 20px;
+}
+
+.someSpace{
+    margin: 20px;
+}
