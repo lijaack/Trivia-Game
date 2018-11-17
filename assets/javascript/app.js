@@ -22,7 +22,7 @@ $( document ).ready(function(){
         const trivia=[
             {question:"what is 1+1?",
             answers:[1,2,3,4],
-            answer:2},
+            answer:"2"},
 
             {question:"what color is an orange?",
             answers:["yellow","green","orange","black"],
@@ -42,7 +42,7 @@ $( document ).ready(function(){
 
             {question:"what is 5+5?",
             answers:[10,4,6,2],
-            answer:10} ,
+            answer:"10"} ,
 
             {question:"what color is spongebob?",
             answers:["black","blue","yellow","green"],
@@ -86,18 +86,40 @@ $( document ).ready(function(){
         })
 
         $("#end").click(function(){
+            clearInterval(setIntervalID);
             checkAnswers();
         });
                 
         
 
         function checkAnswers(){
-            //grab input values and compare with correct answers 
+            //grab radio input values and compare with correct answers 
+
             for (i=0; i<trivia.length; i++){
+     
+                var correctAnswer=trivia[i].answer;
+                // console.log(correctAnswer);
                 var checkHere=trivia[i].question;
-                console.log($("input[name='"+checkHere+"']").find("input:checked").attr("value"))
-                // var answer = $(this).find("input:checked")
+                // console.log (checkHere);
+                var yourAnswer=$("input[name='"+checkHere+"']:checked").attr("value");
+                if (yourAnswer === undefined){
+                    unanswered++;
+                }
+                else if (yourAnswer===correctAnswer){
+                    correct++;
+                }
+                else if (yourAnswer!=correctAnswer && yourAnswer!= undefined){
+                    incorrect++;
+                }
+
             }
+                
+        
+        
+
+
+
+
             //empty page
             $(".divYellow").empty();
             $(".divyellow").append("<h2>Correct answers: " + correct + "!</h2><br>");
@@ -110,9 +132,9 @@ $( document ).ready(function(){
 
             //return results
         
+        }
 
-
-        };
+        
 
     });
 
