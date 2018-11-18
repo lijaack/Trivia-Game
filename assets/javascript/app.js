@@ -243,7 +243,8 @@ $( document ).ready(function(){
                 // console.log(correctAnswer);
                 var checkHere=trivia[i].question;
                 // console.log (checkHere);
-                var yourAnswer=$("input[name='"+checkHere+"']:checked").attr("value");
+                var yourAnswer=$("input[name='"+checkHere+"']:checked").val();
+                console.log(yourAnswer);
                 if (yourAnswer === undefined){
                     unanswered++;
                 }
